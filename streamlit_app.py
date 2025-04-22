@@ -1,3 +1,4 @@
+
 import streamlit as st
 import subprocess
 import os
@@ -19,14 +20,14 @@ option = st.selectbox(
 if st.button("🚀 Lancer le traitement"):
     st.write("Lancement en cours...")
 
-    if option == "✅ Interventions à suivre aujourd’hui":
+    if option == " Interventions à suivre aujourd’hui":
         subprocess.run(["python", "check_interventions_fusion.py"])
         st.success("Script 'interventions à suivre' exécuté avec succès.")
 
-    elif option == "📁 Planning":
+    elif option == " Planning ":
         subprocess.run(["python", "check_interventions_planification_demain.py"])
-        st.success("Script 'planning' exécuté avec succès.")
+        st.success("Script 'terminées aujourd’hui' exécuté avec succès.")
 
-    elif option == "📆 Interventions terminées":
-        subprocess.run(["python", "check_interventions_terminees_date.py"])
-        st.success("Script 'interventions terminées à une date précise' exécuté avec succès.")
+    elif option == " Interventions terminées":
+        subprocess.run(["python", "check_interventions_terminées_date.py"])
+        st.success("Script 'terminées à une date précise' exécuté avec succès.")
